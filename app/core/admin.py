@@ -15,7 +15,7 @@ class UserAdmin(BaseUserAdmin):
             _('Permissions'),
             {'fields': ('is_active', 'is_staff', 'is_superuser')}
         ),
-        (_('Important dates'), {'fields': ('last_login', )}),
+        (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
     )
     add_fieldsets = (
         (None, {
@@ -26,3 +26,4 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Tag)
